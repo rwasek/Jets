@@ -19,6 +19,13 @@ public class AirField {
 		// receive a jet and add it to the jet list .. jets.add(name of jet)
 		this.jets.add(jet);
 	}
+	
+	public void listFleet() {
+		for (int i = 0; i < jets.size(); i++) {
+			System.out.println(this.jets.get(i));
+		}
+		
+	}
 
 	public void flyAllJets() {
 		// loop through the jet array and call their fly methods
@@ -39,11 +46,7 @@ public class AirField {
 		
 	
 	
-//	public void displayCargoJets() {
-//		System.out.println(this.jets.get(2));
-//		System.out.println(this.jets.get(3));
-//		
-//	}
+
 
 	private void readNamesFromFile() {
 		try (BufferedReader bufIn = new BufferedReader(new FileReader("JetList.txt"))) {

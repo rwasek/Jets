@@ -16,14 +16,42 @@ public class JetsApplication {
 	}
 
 	private void launchApp() {
-	airField.flyAllJets();
-
+		while (true) {
+			displayUserMenu();
+			System.out.println();
+		}
 	}
 
-//	private void displayUserMenu() {
-//		// switch for a menu
-//	}
+	private void displayUserMenu() {
+		System.out.println("1. List fleet");
+		System.out.println("2. Fly all jets");
+		System.out.println("3. View fastest jet");
+		System.out.println("4. View jet with longest range");
+		System.out.println("5. Load all Cargo Jets");
+		System.out.println("6. Dogfight!");
+		System.out.println("7. Add a jet to Fleet");
+		System.out.println("8. Remove a jet from Fleet");
+		System.out.println("9. Quit");
+		int choice = kb.nextInt();
 
+		switch (choice) {
 
+		case 1:
+			System.out.println();
+			airField.listFleet();
+			break;
+		case 2:
+			System.out.println();
+			airField.flyAllJets();
+			break;
+//		case 3:
+//			highestRated();
+//			break;
+		case 9:
+			System.out.println("Exiting the Program, Goodbye.");
+			System.exit(0);
+
+		}
+	}
 
 }

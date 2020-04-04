@@ -5,12 +5,11 @@ public abstract class Jet {
 	private double speed; // in miles per hour
 	private int range;
 	private long price;
-	
-	
+
 	public Jet() {
-		//default constructor
+		// default constructor
 	}
-	
+
 	public Jet(String model, double speed, int range, long price) {
 		this.model = model;
 		this.speed = speed;
@@ -18,20 +17,23 @@ public abstract class Jet {
 		this.price = price;
 	}
 	
-	public void printAll() {
-		System.out.println(this);
-	}
 	
-	public void flyAll() {
-		// prints out the jets details and the amount of time the jet can fly until it runs out of fuel (range/speed?)
+
+
+	public void fly() {
+		// prints out the jets details and the amount of time the jet can fly until it
+		// runs out of fuel (range/speed?)
 		// print out getSpeedInMach w/ speed in MPH
-		// model is flying - prints out each jets details - 
-		// F-16C Fighting Falcon is flying fast, ready to fight, at 1500MPH, it can fly 2622 miles until it runs out of fuel, it costs 18800000
-		System.out.println(this.model + " is flying fast, ready to fight, at " + this.speed + "MPH, it can fly " + this.range + " miles and " + this.range/this.speed + " hours until it runs out of fuel, and it costs " + this.price);
+		// model is flying - prints out each jets details -
+		// F-16C Fighting Falcon is flying fast, ready to fight, at 1500MPH, it can fly
+		// 2622 miles until it runs out of fuel, it costs 18800000
+		System.out.println(this.model + " is flying fast, ready to fight, at " + this.speed + "MPH, it can fly "
+				+ this.range + " miles and " + this.range / this.speed
+				+ " hours until it runs out of fuel, and it costs " + this.price);
 	}
-	
+
 	public double getSpeedInMach(double speed) {
-		double machSpeed = this.speed/767;
+		double machSpeed = this.speed / 767;
 		return machSpeed;
 	}
 
@@ -67,9 +69,4 @@ public abstract class Jet {
 		this.price = price;
 	}
 
-
-
-
-	
-	
 }
