@@ -1,0 +1,5 @@
+F-16C Fighting Falcon, 1500, 2622, 18_800_000
+F-22A Raptor, 1500, 1839, 150_000_000
+C-17 Globemaster III, 590, 6456, 218_000_000
+C-130J Super Hercules, 416, 2072, 75_000_000
+F-15E Strike Eagle, 1875, 2992, 36_000_000
