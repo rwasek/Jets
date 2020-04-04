@@ -1,36 +1,29 @@
 package com.skilldistillery.jets;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class AirField {
 	// Empty <List> of Jets
-	private List<String> jets;
+	public List<Jet> jets;
 	
 	
 	public AirField() {
+		jets = new ArrayList<>();
+	}
+	
+	public AirField(List<Jet> jets) {
+		this.jets = jets;
+	}
+	
+	public void addJet(Jet jetOne) {
+		jets.add(jetOne);
+	}
+
+	public Jet getJet(int jetOne) {
+		return jets.get(jetOne);
 		
 	}
-	
-	public AirField(List<String> jets) {
-		super(); // this isnt needed right?
-		this.jets = jets;
-	}
-
-
-
-
-	public List<String> getJets() {
-		return jets;
-	}
-
-
-	public void setJets(List<String> jets) {
-		this.jets = jets;
-	}
-	
-	
-	
-
 
 
 }

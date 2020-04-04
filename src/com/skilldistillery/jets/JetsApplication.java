@@ -6,6 +6,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.Set;
+import java.util.TreeSet;
 
 public class JetsApplication {
 	
@@ -24,19 +26,29 @@ public class JetsApplication {
 	
 	private void launchApp() {
 		readNamesFromFile();
-		airField.setJets(jetsInfo);
-		System.out.println(jetsInfo);
+		for (int i = 0; i < airField.jets.size(); i++) {
+			System.out.println(airField.jets.get(i).toString());
+		} 
 	}
 	
 	private void displayUserMenu() {
 		//switch for a menu
 	}
 	
+	
 	private List<String> readNamesFromFile() {
 		try (BufferedReader bufIn = new BufferedReader(new FileReader("JetList.txt"))) {
 			String jetLine;
 			while ((jetLine = bufIn.readLine()) != null) {
-				jetsInfo.add(jetLine);
+				String[] jets = jetLine.split(",");
+				String jetName = jets[0];
+				double jetSpeed = Double.parseDouble(jets[1].trim());
+				int jetRange = Integer.parseInt(jets[2].trim());
+				long jetPrice = Long.parseLong(jets[3].trim());
+				JetImpl jet1 = new JetImpl(jetName, jetSpeed, jetRange, jetPrice);
+				airField.jets.add(jet1);
+				jetsInfo.add(jets[0]);
+				
 			}
 			bufIn.close();
 		} catch (IOException e) {
@@ -46,4 +58,9 @@ public class JetsApplication {
 	}
 	
 
-}
+	}
+	
+	
+	
+
+
