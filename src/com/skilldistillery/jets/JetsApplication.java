@@ -44,9 +44,10 @@ public class JetsApplication {
 			System.out.println();
 			airField.flyAllJets();
 			break;
-//		case 3:
-//			highestRated();
-//			break;
+		case 3:
+			System.out.println();
+			airField.fastestJet();
+			break;
 		case 9:
 			System.out.println("Exiting the Program, Goodbye.");
 			System.exit(0);

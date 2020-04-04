@@ -1,5 +1,7 @@
 package com.skilldistillery.jets;
 
+import java.text.DecimalFormat;
+
 public abstract class Jet {
 	private String model;
 	private double speed; // in miles per hour
@@ -16,9 +18,6 @@ public abstract class Jet {
 		this.range = range;
 		this.price = price;
 	}
-	
-	
-
 
 	public void fly() {
 		// prints out the jets details and the amount of time the jet can fly until it
@@ -27,9 +26,10 @@ public abstract class Jet {
 		// model is flying - prints out each jets details -
 		// F-16C Fighting Falcon is flying fast, ready to fight, at 1500MPH, it can fly
 		// 2622 miles until it runs out of fuel, it costs 18800000
-		System.out.println(this.model + " is flying fast, ready to fight, at " + this.speed + "MPH, it can fly "
-				+ this.range + " miles and " + this.range / this.speed
-				+ " hours until it runs out of fuel, and it costs " + this.price);
+		DecimalFormat df = new DecimalFormat("#.##");
+		System.out.println(this.model + " is taking off from the Air Field, at a top speed of " + this.speed
+				+ " MPH it can fly " + this.range + " miles and has " + df.format(this.range / this.speed)
+				+ " hours until it runs out of fuel. It costs $" + this.price + " per unit!");
 	}
 
 	public double getSpeedInMach(double speed) {

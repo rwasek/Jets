@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class AirField {
@@ -19,12 +20,12 @@ public class AirField {
 		// receive a jet and add it to the jet list .. jets.add(name of jet)
 		this.jets.add(jet);
 	}
-	
+
 	public void listFleet() {
 		for (int i = 0; i < jets.size(); i++) {
 			System.out.println(this.jets.get(i));
 		}
-		
+
 	}
 
 	public void flyAllJets() {
@@ -34,19 +35,33 @@ public class AirField {
 		}
 	}
 
+	public void fastestJet() {
+		Jet prior = this.jets.get(0);
+
+		Jet fastest = this.jets.get(0);
+
+		for (int i = 0; i < jets.size(); i++) {
+			Jet jet = this.jets.get(i);
+			if (jet != null) {
+				if (prior.getSpeed() > this.jets.get(i).getSpeed()) {
+					prior = this.jets.get(i);
+				}
+				if (fastest.getSpeed() < this.jets.get(i).getSpeed()) {
+					fastest = this.jets.get(i);
+				}
+
+			}
+		}
+
+		System.out.println("The fastest jet is : " + fastest);
+	}
+
 //	public void displayCombatJets() {
 //		for (Jet jet : jets) {
 //			if (jet instanceof CombatReady) { // for combat vs cargo
 //				System.out.println();
 //			}
 //		}
-		
-			
-			
-		
-	
-	
-
 
 	private void readNamesFromFile() {
 		try (BufferedReader bufIn = new BufferedReader(new FileReader("JetList.txt"))) {
@@ -75,11 +90,5 @@ public class AirField {
 			System.err.println(e);
 		}
 	}
-
-
-
-
-
-	
 
 }
