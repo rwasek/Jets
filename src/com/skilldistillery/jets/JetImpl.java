@@ -9,7 +9,7 @@ public class JetImpl extends Jet {
 	@Override
 	public String toString() {
 		return "Custom Jet [Model: " + getModel() + ", Speed: " + getSpeed() + ", Range: " + getRange()
-				+ ", Price: " + getPrice() + "]";
+				+ ", Price: $" + fm.format(getPrice()) + "]";
 	}
 	
 	

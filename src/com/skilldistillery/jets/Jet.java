@@ -1,8 +1,13 @@
 package com.skilldistillery.jets;
 
 import java.text.DecimalFormat;
+import java.text.NumberFormat;
 
 public abstract class Jet {
+	
+	NumberFormat fm = NumberFormat.getInstance();
+	DecimalFormat df = new DecimalFormat("#.##");
+	
 	private String model;
 	private double speed; // in miles per hour
 	private int range;
@@ -20,10 +25,10 @@ public abstract class Jet {
 	}
 
 	public void fly() {
-		DecimalFormat df = new DecimalFormat("#.##");
 		System.out.println(this.model + " is taking off from the Air Field, at a top speed of " + this.speed
 				+ " MPH it can fly " + this.range + " miles and has " + df.format(this.range / this.speed)
-				+ " hours until it runs out of fuel. It costs $" + this.price + " per unit!");
+				+ " hours until it runs out of fuel. It costs $" + fm.format(this.price) + " per unit!");
+		System.out.println("The " + this.model + " also flys at " + df.format(getSpeedInMach(this.speed)) + "x the speed of sound!");
 	}
 
 	public double getSpeedInMach(double speed) {

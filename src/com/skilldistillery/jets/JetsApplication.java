@@ -67,7 +67,11 @@ public class JetsApplication {
 			break;
 			
 		case 7:
-			System.out.println("Lets create a simple Jet!");
+			System.out.println("\t\t\t\t  Create Your Own Jet: ");
+			System.out.println();
+			System.out.println("\\-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~/VII\\-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~\\");
+			System.out.println();
+			System.out.println("Lets create your own custom Jet!");
 			System.out.println("Please enter a model name: ");
 			String model = kb.nextLine() + kb.nextLine();
 			System.out.println("Please enter the speed in MPH: ");
@@ -84,7 +88,11 @@ public class JetsApplication {
 			airField.removeJet();
 			break;
 		case 9:
-			System.out.println("Exiting the Program, Goodbye.");
+			System.out.println("\t\t\t\t       Quitting: ");
+			System.out.println();
+			System.out.println("\\-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~/IX\\-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~\\");
+			System.out.println();
+			System.out.println("Exiting the Program, Goodbye!");
 			System.exit(0);
 
 		}
