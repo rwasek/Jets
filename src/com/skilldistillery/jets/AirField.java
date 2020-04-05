@@ -5,6 +5,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class AirField {
 	// Empty <List> of Jets
@@ -15,9 +16,16 @@ public class AirField {
 		readNamesFromFile();
 	}
 	
-//	public void addingUserCreatedJet(JetImpl jet) {
-//		parkJet(jet);
-//	}
+	public void removeJet() {
+		Scanner kb = new Scanner(System.in);
+		System.out.println("Which jet would you like to remove?");
+		for (int i = 0; i < jets.size(); i++) {
+			System.out.println(i + ": " + this.jets.get(i));
+		}
+		int choice = kb.nextInt();
+		jets.remove(choice);
+		System.out.println("The jet in spot " + choice + ". has now been removed");
+	}
 
 	public void parkJet(Jet jet) {
 		// receive a jet and add it to the jet list .. jets.add(name of jet)

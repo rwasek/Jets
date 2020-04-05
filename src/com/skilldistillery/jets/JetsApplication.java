@@ -40,26 +40,32 @@ public class JetsApplication {
 			System.out.println();
 			airField.listFleet();
 			break;
+			
 		case 2:
 			System.out.println();
 			airField.flyAllJets();
 			break;
+			
 		case 3:
 			System.out.println();
 			airField.fastestJet();
 			break;
+			
 		case 4:
 			System.out.println();
 			airField.longestRangeJet();
 			break;
+			
 		case 5:
 			System.out.println();
 			airField.startLoadCargo();
 			break;
+			
 		case 6:
 			System.out.println();
 			airField.startDogFight();
 			break;
+			
 		case 7:
 			System.out.println("Lets create a simple Jet!");
 			System.out.println("Please enter a model name: ");
@@ -72,8 +78,10 @@ public class JetsApplication {
 			long price = kb.nextLong();
 			JetImpl userCreated = new JetImpl(model, speed, range, price);
 			airField.parkJet(userCreated);
+			break;
 			
-			
+		case 8:
+			airField.removeJet();
 			break;
 		case 9:
 			System.out.println("Exiting the Program, Goodbye.");
