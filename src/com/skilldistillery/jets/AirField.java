@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 public class AirField {
@@ -15,6 +14,10 @@ public class AirField {
 		jets = new ArrayList<>();
 		readNamesFromFile();
 	}
+	
+//	public void addingUserCreatedJet(JetImpl jet) {
+//		parkJet(jet);
+//	}
 
 	public void parkJet(Jet jet) {
 		// receive a jet and add it to the jet list .. jets.add(name of jet)
@@ -49,19 +52,46 @@ public class AirField {
 				if (fastest.getSpeed() < this.jets.get(i).getSpeed()) {
 					fastest = this.jets.get(i);
 				}
-
 			}
 		}
-
-		System.out.println("The fastest jet is : " + fastest);
+		System.out.println("The fastest jet is: " + fastest);
+	}
+	public void longestRangeJet() {
+		Jet prior = this.jets.get(0);
+		
+		Jet longestRangeJet = this.jets.get(0);
+		
+		for (int i = 0; i < jets.size(); i++) {
+			Jet jet = this.jets.get(i);
+			if (jet != null) {
+				if (prior.getRange() > this.jets.get(i).getRange()) {
+					prior = this.jets.get(i);
+				}
+				if (longestRangeJet.getRange() < this.jets.get(i).getRange()) {
+					longestRangeJet = this.jets.get(i);
+				}
+			}
+		}
+		System.out.println("The jet with the longest range is: " + longestRangeJet);
 	}
 
-//	public void displayCombatJets() {
-//		for (Jet jet : jets) {
-//			if (jet instanceof CombatReady) { // for combat vs cargo
-//				System.out.println();
-//			}
-//		}
+	public void startDogFight() {
+		for (Jet jet : jets) {
+			if (jet instanceof CombatReady) { // for combat vs cargo
+				System.out.print(jet.getModel());
+				((CombatReady) jet).fight();
+			}
+		}
+	}
+	
+	public void startLoadCargo() {
+		for (Jet jet : jets) {
+			if (jet instanceof CargoCarrier) { // for combat vs cargo
+				System.out.print(jet.getModel());
+				((CargoCarrier) jet).loadCargo();
+			}
+		}
+	}
 
 	private void readNamesFromFile() {
 		try (BufferedReader bufIn = new BufferedReader(new FileReader("JetList.txt"))) {

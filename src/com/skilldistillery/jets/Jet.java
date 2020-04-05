@@ -20,12 +20,6 @@ public abstract class Jet {
 	}
 
 	public void fly() {
-		// prints out the jets details and the amount of time the jet can fly until it
-		// runs out of fuel (range/speed?)
-		// print out getSpeedInMach w/ speed in MPH
-		// model is flying - prints out each jets details -
-		// F-16C Fighting Falcon is flying fast, ready to fight, at 1500MPH, it can fly
-		// 2622 miles until it runs out of fuel, it costs 18800000
 		DecimalFormat df = new DecimalFormat("#.##");
 		System.out.println(this.model + " is taking off from the Air Field, at a top speed of " + this.speed
 				+ " MPH it can fly " + this.range + " miles and has " + df.format(this.range / this.speed)

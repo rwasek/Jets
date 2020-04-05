@@ -48,6 +48,33 @@ public class JetsApplication {
 			System.out.println();
 			airField.fastestJet();
 			break;
+		case 4:
+			System.out.println();
+			airField.longestRangeJet();
+			break;
+		case 5:
+			System.out.println();
+			airField.startLoadCargo();
+			break;
+		case 6:
+			System.out.println();
+			airField.startDogFight();
+			break;
+		case 7:
+			System.out.println("Lets create a simple Jet!");
+			System.out.println("Please enter a model name: ");
+			String model = kb.nextLine() + kb.nextLine();
+			System.out.println("Please enter the speed in MPH: ");
+			double speed = kb.nextDouble();
+			System.out.println("Please enter the range: ");
+			int range = kb.nextInt();
+			System.out.println("Please enter the unit price in US dollars: ");
+			long price = kb.nextLong();
+			JetImpl userCreated = new JetImpl(model, speed, range, price);
+			airField.parkJet(userCreated);
+			
+			
+			break;
 		case 9:
 			System.out.println("Exiting the Program, Goodbye.");
 			System.exit(0);
