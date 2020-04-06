@@ -7,6 +7,7 @@ import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.function.Predicate;
 
 public class AirField {
 	NumberFormat fm = NumberFormat.getInstance();
@@ -24,7 +25,7 @@ public class AirField {
 		System.out.println();
 		System.out.println("\\-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~/VIII\\-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~\\");
 		System.out.println();
-		System.out.println("Which jet would you like to remove?:");
+		System.out.println("Which jet would you like to remove from the Fleet?:");
 		System.out.println();
 		for (int i = 0; i < jets.size(); i++) {
 			System.out.println(i + 1 + ": " + this.jets.get(i));
@@ -33,9 +34,10 @@ public class AirField {
 		
 		int choice = kb.nextInt();
 		jets.remove(choice - 1);
-		System.out.println("The jet in spot " + choice + ". has now been removed");
+		System.out.println("\nThe jet in spot " + choice + " has now been removed from the Fleet!");
 		
 	}
+
 
 	public void parkJet(Jet jet) {
 		// receive a jet and add it to the jet list .. jets.add(name of jet)
@@ -55,6 +57,26 @@ public class AirField {
 
 	}
 
+	public void flyOneJet() {
+
+		Scanner kb = new Scanner(System.in); // closing the scanner here causes bugs!
+		System.out.println("\t\t\t\t      Solo Flight: ");
+		System.out.println();
+		System.out.println("\\-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~/IX\\-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~\\");
+		System.out.println();
+		System.out.println("Which jet would you like to fly?:");
+		System.out.println();
+		for (int i = 0; i < jets.size(); i++) {
+			System.out.println(i + 1 + ": " + this.jets.get(i));
+			System.out.println();
+		}
+		
+		int choice = kb.nextInt();
+		System.out.println("\n\t\t\t\t    SOLO FLIGHT ENGAGED!\n");
+		jets.get(choice - 1).fly();
+		
+	}
+	
 	public void flyAllJets() {
 		// loop through the jet array and call their fly methods
 		System.out.println("\t\t\t     Fleet Preparing For Take Off: ");

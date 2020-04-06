@@ -33,7 +33,9 @@ public class JetsApplication {
 		System.out.println("6. Dogfight!");
 		System.out.println("7. Add a jet to Fleet");
 		System.out.println("8. Remove a jet from Fleet");
-		System.out.println("9. Quit");
+		System.out.println("9. Fly one jet!");
+		System.out.println("10. Quit\n");
+		System.out.print("Entry: ");
 		int choice = kb.nextInt();
 
 		switch (choice) {
@@ -75,7 +77,12 @@ public class JetsApplication {
 		case 8:
 			airField.removeJet();
 			break;
+			
 		case 9:
+			airField.flyOneJet();
+			break;
+		
+		case 10:
 			quitProgram();
 
 		}
@@ -91,7 +98,8 @@ public class JetsApplication {
 		System.out.println("Lets create your own custom Jet! Please choose what type you would like to create:\n");
 		System.out.println("1. Fighter Jet!");
 		System.out.println("2. Cargo Carrier!");
-		System.out.println("3. Custom Basic Jet!");
+		System.out.println("3. Custom Basic Jet!\n");
+		System.out.print("Entry: ");
 		int choice = kb.nextInt();
 		
 		switch (choice) {
@@ -149,12 +157,13 @@ public class JetsApplication {
 		JetImpl userCreated = new JetImpl(model, speed, range, price);
 		airField.parkJet(userCreated);
 	}
+	
 
 	private void quitProgram() {
 		
 		System.out.println("\t\t\t\t       Quitting: ");
 		System.out.println();
-		System.out.println("\\-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~/IX\\-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~\\");
+		System.out.println("\\-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~/X\\-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~\\");
 		System.out.println();
 		System.out.println("Exiting the Program, Goodbye!");
 		System.exit(0);
