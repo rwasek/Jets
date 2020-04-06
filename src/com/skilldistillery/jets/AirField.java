@@ -27,12 +27,12 @@ public class AirField {
 		System.out.println("Which jet would you like to remove?:");
 		System.out.println();
 		for (int i = 0; i < jets.size(); i++) {
-			System.out.println(i + ": " + this.jets.get(i));
+			System.out.println(i + 1 + ": " + this.jets.get(i));
 			System.out.println();
 		}
 		
 		int choice = kb.nextInt();
-		jets.remove(choice);
+		jets.remove(choice - 1);
 		System.out.println("The jet in spot " + choice + ". has now been removed");
 		
 	}
